@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0e5ec;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #9aa9ff, #d6dfff);
+    padding: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #1e3a8a !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #f59e0b !important;
+}
+
+/* Dashboard Section */
+.dashboard-section {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #e0e5ec;
+    padding: 60px 0;
+    transition: all 0.3s ease;
+}
+
+.dashboard-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.dashboard-section p {
+    font-size: 1.1rem;
+    color: #4b5563;
+}
+
+/* Glassmorphism / Card */
+.glassmorphism-box {
+    background: #e0e5ec;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 9px 9px 16px #bec4d3,
+                -9px -9px 16px #ffffff;
+    transition: all 0.4s ease;
+}
+
+.glassmorphism-box:hover {
+    box-shadow: inset 6px 6px 12px #c0c5d0,
+                inset -6px -6px 12px #ffffff;
+}
+
+/* Input Styling */
+.form-label {
+    font-weight: 600;
+    color: #111827;
+    margin-top: 15px;
+    display: block;
+}
+
+.form-control {
+    background: #e0e5ec;
+    color: #333;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 15px;
+    box-shadow: inset 4px 4px 8px #bec4d3,
+                inset -4px -4px 8px #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #c0c5d0,
+                inset -2px -2px 5px #ffffff;
+}
+
+/* Buttons */
+.btn-glow,
+.btn-sm {
+    background: #6366f1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    box-shadow: 4px 4px 10px #c2c7d4,
+                -4px -4px 10px #ffffff;
+    transition: all 0.3s ease;
+    margin: 8px 5px;
+    cursor: pointer;
+}
+
+.btn-glow:hover,
+.btn-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 5px #c2c7d4,
+                -2px -2px 5px #ffffff;
+    background-color: #4f46e5;
+}
+
+/* Status Badge */
+.status {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+}
+
+.status.Green {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status.Yellow {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status.Red {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Table */
+.table-dark {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 6px 6px 12px #cbd0da,
+                -6px -6px 12px #ffffff;
+}
+
+.table-dark th {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    font-weight: 600;
+    text-align: center;
+}
+
+.table-dark td {
+    background-color: #f9fafb;
+    color: #1f2937;
+    text-align: center;
+}
+
+/* Modal Fixes */
+.modal-content {
+    border-radius: 20px;
+    background-color: #f3f4f6;
+    color: #111827;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    background: #e0e5ec;
+    color: #4b5563;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 60px;
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}

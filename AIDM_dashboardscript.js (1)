@@ -1,0 +1,66 @@
+function showAddComponent() {
+    document.getElementById("add-component-section").classList.toggle("hidden");
+}
+
+document.getElementById("componentForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let name = document.getElementById("componentName").value;
+    let manufactureDate = document.getElementById("manufactureDate").value;
+    let startDate = document.getElementById("startUseDate").value;
+
+    let status = predictStatus(startDate);
+    let table = document.getElementById("componentTable");
+    let row = table.insertRow();
+
+    const componentId = Date.now(); // Temporary ID for client-side (you'll use real ID from backend later)
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${manufactureDate}</td>
+        <td>${startDate}</td>
+        <td class="status">${status}</td>
+        <td>
+            <button class="btn btn-success btn-sm" onclick="generateSchedule(${componentId})">Generate</button>
+            <button class="btn btn-info btn-sm" onclick="viewSchedule(${componentId})">View</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteComponent(this)">Delete</button>
+        </td>
+    `;
+
+    // Reset form and hide section
+    document.getElementById("componentForm").reset();
+    document.getElementById("add-component-section").classList.add("hidden");
+});
+
+function predictStatus(startDate) {
+    let today = new Date();
+    let start = new Date(startDate);
+    let diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+
+    if (diff < 10) return "🟢 Green";
+    if (diff < 25) return "🟡 Yellow";
+    return "🔴 Red";
+}
+
+function deleteComponent(btn) {
+    let row = btn.parentNode.parentNode;
+    row.remove();
+}
+
+// 💡 Placeholder for Generate Button
+function generateSchedule(id) {
+    alert(`🔧 Schedule generated for component ID: ${id}`);
+    // Later: fetch schedule from backend
+}
+
+// 💡 Modal View Placeholder
+function viewSchedule(id) {
+    const modalContent = `
+        <p><strong>Component ID:</strong> ${id}</p>
+        <p><strong>Next Maintenance:</strong> In 15 days</p>
+        <p><strong>Recommended Action:</strong> Routine Inspection</p>
+    `;
+    document.getElementById("scheduleDetails").innerHTML = modalContent;
+    const modal = new bootstrap.Modal(document.getElementById("scheduleModal"));
+    modal.show();
+}
